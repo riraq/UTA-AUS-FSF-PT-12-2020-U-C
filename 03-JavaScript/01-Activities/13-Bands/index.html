@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Bands</title>
+</head>
+<body>
+    <script>
+        var myBands = ["the gaslight anthem", "alkaline trio", "rise against", "the menzingers", "nofx"];
+        console.log(myBands);
+
+        var theirBand = prompt ("What is your favorite band?");
+        console.log(theirBand);
+
+        var theirBandLower = theirBand.toLowerCase();
+
+        if (myBands.indexOf(theirBandLower)=== -1) {
+            alert("Nah. They're pretty lame.");
+        }
+        else {
+            alert("YEAH I LOVE THEM!")
+        };
+
+    </script>
+</body>
+</html>

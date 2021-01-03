@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ask user for rock paper scissors input
+
+        var userRPS = prompt ("Pick rock, paper, or scissors.");
+        console.log(userRPS);
+
+        var RPS = ["rock", "paper", "scissors"];
+        //if user does not put one of those 3, give an alert
+
+        // if (userRPS !== );
+
+        //computer selects rock, paper, or scissors
+        var num = Math.random();
+        console.log(num)
+
+        if (num < 0.33) {
+            var compRPS = RPS[0];
+        }
+
+        else if (0.33 < num && num < 0.66) {
+            var compRPS = RPS[1];
+        }
+
+        else {
+            var compRPS = RPS[2];
+        }
+
+        console.log(compRPS)
+
+        //compare results between user and computer selection
+
+        if (userRPS === "rock" && compRPS === "scissors") {
+            alert("Computer chose scissors. You win!")
+        }
+        
+        else if (userRPS === "scissors" && compRPS === "paper") {
+            alert("Computer chose paper. You win!")
+        }
+        else if (userRPS === "paper" && compRPS === "rock") {
+            alert("Computer chose rock. You win!")
+        }
+        else if (userRPS === compRPS) {
+            alert("Computer chose " + compRPS + ". " +  "You tie!")
+        }
+        else {
+            alert("Computer chose " + compRPS + ". " + "You lose!")
+        }
+
+        //give an alert for win or lose
+
+
+    </script>
+</body>
+</html>
