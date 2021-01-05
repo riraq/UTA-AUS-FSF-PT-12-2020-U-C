@@ -10,16 +10,24 @@
 
     <script>
 
+      var number = [2, 3, 4];
+
       // FUNCTIONS
       // ================================================================================
 
       // Create a Function called "adder" that take three arguments (x, y, z).
       // The function should add the arguments together, and log the result to the console.
+      function adder(arr) {
 
+        console.log(arr[0] + arr[1] + arr[2]);
+      }
 
       // Create a Function called "multiplier" that takes three arguments (x, y, z).
       // The function should multiply the arguments, and log the result to the console.
+      function multiplier(arr) {
 
+        console.log(arr[0] * arr[1] * arr[2]);
+      }
 
       // Create a Function called "isString" that takes three arguments (x, y, z).
       // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
@@ -43,13 +51,14 @@
 
 
       // Call the adder function here.
+      adder(number);
 
 
       console.log("-------------------");
 
 
       // Call the multiplier function here.
-
+      multiplier(number);
 
       console.log("-------------------");
 
