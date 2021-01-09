@@ -10,12 +10,16 @@
         //ask user for rock paper scissors input
 
         var userRPS = prompt ("Pick rock, paper, or scissors.");
+        userRPS = userRPS.toLowerCase
         console.log(userRPS);
 
-        var RPS = ["rock", "paper", "scissors"];
         //if user does not put one of those 3, give an alert
 
-        // if (userRPS !== );
+        if (userRPS === "rock" || userRPS === "paper" || userRPS === "scissors") {
+            alert("Please choose rock, paper, or scissors!");
+            var userRPS = prompt ("Pick rock, paper, or scissors.");
+            userRPS = userRPS.toLowerCase;
+        };
 
         //computer selects rock, paper, or scissors
         var num = Math.random();
