@@ -1,6 +1,8 @@
 // TODO: Which element is the following line of code selecting?
+// the carouselbox class in the index file
 var carousel = document.querySelector(".carouselbox");
 // TODO: Which element is the following line of code selecting?
+// line 20, next class
 var next = carousel.querySelector(".next");
 var prev = carousel.querySelector(".prev");
 var index = 0;
