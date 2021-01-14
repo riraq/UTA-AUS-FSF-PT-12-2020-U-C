@@ -24,7 +24,6 @@ infoEl.appendChild(imgEl);
 infoEl.appendChild(kittenEl);
 infoEl.appendChild(nameEl);
 body.appendChild(favoriteEl);
-favoriteEl.appendChild(listEl);
 // Append ordered list 
 favoriteEl.appendChild(listEl);
 
@@ -36,5 +35,23 @@ kittenEl.setAttribute("style", "font-size:25px; text-align:center;");
 favoriteEl.setAttribute("style", "font-size:20px;");
 
 // TODO: Add ordered list items containing four favorite foods
+listEl.setAttribute("style", "background-color: #333333; color: white; padding: 20px");
+var listItems = [li1, li2, li3, li4];
+var listFoods = ["apples", "pizza", "cupcakes", "dumplings"];
+var colors = ["background-color: red", "background-color: blue", "background-color: orange", "background-color: green"];
 
-document.body.appendChild(li)
+for (var i = 0; i < listItems.length; i++) {
+    listEl.appendChild(listItems[i]);
+};
+
+for (var i = 0; i < listItems.length; i++) {
+    listItems[i].textContent = listFoods[i]
+};
+
+for (var i = 0; i < listItems.length; i++){
+    listItems[i].setAttribute("style", "color: white; padding: 5px; margin-left: 35px")
+};
+
+for (var i = 0; i < colors.length; i++) {
+    listItems[i].setAttribute("style", colors[i])
+}

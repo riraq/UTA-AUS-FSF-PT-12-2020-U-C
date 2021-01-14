@@ -24,5 +24,5 @@ site3El.children[1].children[0].setAttribute("style", "padding:10px;");
 var header4 = document.querySelectorAll("h4")
 
 for (var i = 0; i < header4.length; i++) {
-    header4[i].setAttribute("style", "color:blue; font-size: 30px; font-weight:bold");
+    header4[i].setAttribute("style", "color:blue; font-size: 30px; font-weight:bold; padding-left: 10px; margin: 0");
    }
