@@ -68,8 +68,13 @@
               console.log("You clicked a button!!");
 
               // Add code to have the computer guess a random number between 1 and 4
+              var compGuess = Math.floor(Math.random() * 4) + 1;
               // Then determine which button was clicked
+              var button = ($(this).val());
+              console.log(button)
+
               // Compare the computer and user guess
+
               // Inform the user if the've guessed correctly or incorrectly
 
             });
