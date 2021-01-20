@@ -53,6 +53,21 @@
           </div>
         </div>
 
+        <!-- Controls (Superpower Stretch)-->
+        <div id="sizeControls" class="card">
+          <h4 class="card-header">Superpowers - Change Sizes!</h4>
+          <div class="card-body">
+            <div class="text-center">
+              <button class="btn btn-dark btn-lg normal-stretch-button">
+                <span class="fa fa-ok"></span> Normal</button>
+              <button class="btn btn-primary btn-lg primary-button">
+                <span class="fa fa-plus"></span> Stretch Long</button>
+              <button class="btn btn-danger btn-lg secondary-button">
+                <span class="fa fa-minus"></span> Stretch Wide</button>
+            </div>
+          </div>
+        </div>
+        
         <!-- Controls (Superpower Visibility) -->
         <div id="visibilityControls" class="card">
           <h4 class="card-header">Superpowers - Invisiblity!</h4>
@@ -117,14 +132,26 @@
 
     // Size Buttons
     $(".normal-button").on("click", function() {
-      captainPlanet.animate({ height: "300px" });
+      captainPlanet.animate({ height: "300px", width: "400px" });
     });
     $(".grow-button").on("click", function() {
-      captainPlanet.animate({ height: "500px" });
+      captainPlanet.animate({ height: "500px", width: "600px"});
     });
     $(".shrink-button").on("click", function() {
-      captainPlanet.animate({ height: "100px" });
+      captainPlanet.animate({ height: "100px", width: "200px" });
     });
+
+    // Stretch Buttons
+    $(".normal-stretch-button").on("click", function() {
+      captainPlanet.animate({ height: "300px", width: "400px" });
+    });
+    $(".primary-button").on("click", function() {
+      captainPlanet.animate({ height: "500px", width: "200" });
+    });
+    $(".secondary-button").on("click", function() {
+      captainPlanet.animate({ height: "100px", width: "600" });
+    });
+
 
     // Visibility Buttons
     $(".vis-button").on("click", function() {
