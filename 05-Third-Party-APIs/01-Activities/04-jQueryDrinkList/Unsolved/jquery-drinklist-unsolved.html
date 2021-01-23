@@ -30,11 +30,17 @@
     // HINT: you will need a for loop to go over each element in the list
     var drinkOptionsEl = $("#drink-options");
 
-    for (var i=0; i < drinkList.length; i++) {
-      var el = $("<div>");
-      el.text(drinkList[i]);
-      drinkOptionsEl.append(el);
-    }
+    // for (var i=0; i < drinkList.length; i++) {
+    //   var el = $("<div>");
+    //   el.text(drinkList[i]);
+    //   drinkOptionsEl.append(el);
+    // }
+
+    $.each(drinkList, function(i, drink){
+      console.log(i)
+      console.log(drink)
+      drinkOptionsEl.append("<li>" + drink + "</li>");
+    });
 
   </script>
 

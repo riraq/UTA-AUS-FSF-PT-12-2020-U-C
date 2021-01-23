@@ -38,11 +38,18 @@
     // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
     // ...
 
-    for (var i = 0; i < drinkList.length; i++){
-      var childEl = document.createElement("div");
-      childEl.textContent = drinkList[i];
-      drinkOptionsEl.appendChild(childEl)
-    }
+    // for (var i = 0; i < drinkList.length; i++){
+    //   var childEl = document.createElement("div");
+    //   childEl.textContent = drinkList[i];
+    //   drinkOptionsEl.appendChild(childEl)
+    // }
+
+      drinkList.forEach(function(drinkPrices) {
+        var childEl = document.createElement("div");
+        childEl.textContent = drinkPrices;
+        drinkOptionsEl.appendChild(childEl)
+
+      });
 
     // ...
 
