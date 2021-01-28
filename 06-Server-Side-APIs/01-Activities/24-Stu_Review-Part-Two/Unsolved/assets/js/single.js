@@ -6,7 +6,10 @@ var getRepoName = function () {
   // Where is this value coming from?
   // TODO: Write your answer here
   var queryString = document.location.search;
+  console.log(document.location.search)
   var repoName = queryString.split('=')[1];
+  console.log(queryString.split('=')[1])
+
 
   if (repoName) {
     repoNameEl.textContent = repoName;
