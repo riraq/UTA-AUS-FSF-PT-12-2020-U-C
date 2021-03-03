@@ -17,17 +17,20 @@ function Student(first, last, age) {
     // Ex. 95 => 'A'
     if (typeof input === 'number') {
       // TODO: Add logic here to return a single letter grade
-      switch (input) {
-        case inRange(input, 90, 100):
-          return "A";
-        case inRange(input, 80, 89):
-          return "B";
-        case inRange(input, 70, 79):
-          return "C";
-        case inRange(input, 60, 69):
-          return "D";
-        case inRange(input, 0, 59):
-          return "F";
+      if (inRange(input, 90, 100)) {
+        response = "A";
+      }
+      if (inRange(input, 80, 89)) {
+        response = "B";
+      }
+      if (inRange(input, 70, 79)) {
+        response = "C";
+      }
+      if (inRange(input, 60, 69)) {
+        response = "D";
+      }
+      if (inRange(input, 0, 59)) {
+        response = "F";
       }
       return response;
     }
@@ -61,5 +64,5 @@ function Student(first, last, age) {
 }
 
 const John = new Student('John', 'Appleseed', '30');
-console.log('John.displayGrade():', John.displayGrade(95));
-console.log('John.displayGrade():', John.displayGrade('B'));
+console.log('John.displayGrade():', John.displayGrade(85));
+console.log('John.displayGrade():', John.displayGrade('A'));
