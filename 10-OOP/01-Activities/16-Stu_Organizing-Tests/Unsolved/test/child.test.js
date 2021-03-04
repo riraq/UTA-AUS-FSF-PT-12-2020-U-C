@@ -2,20 +2,24 @@ const Child = require("../child");
 
 describe("Child", () => {
   // TODO: Add a comment describing the purpose of the following test suite
+  // should create an object with a name and age if provided valid arguments
   describe("Initialization", () => {
     it("should create an object with a name and age if provided valid arguments", () => {
       const child = new Child("Sarah", 3);
 
       // TODO: Add a comment describing the purpose of the following statements
+      // name and age keys are equal to the keys set on line 8
       expect(child.name).toEqual("Sarah");
       expect(child.age).toEqual(3);
     });
 
     it("should throw an error if provided no arguments", () => {
       // TODO: Add a comment describing the purpose of the following expression
+      // should throw an error if provided no arguments
       const cb = () => new Child();
 
       // TODO: Add a comment describing the purpose of the following statement
+      // we expect this to throw an error
       expect(cb).toThrow();
     });
 
@@ -23,9 +27,11 @@ describe("Child", () => {
       const cb = () => new Child("Sarah");
 
       // TODO: Add a comment describing the purpose of the following declaration
+      // Expected parameter 'age' to be a non-negative number
       const err = new Error("Expected parameter 'age' to be a non-negative number");
 
       // TODO: Add a comment describing the purpose of the following statement
+      // throw an error if the age is a non-negative number
       expect(cb).toThrowError(err);
     });
 

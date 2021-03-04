@@ -7,6 +7,7 @@ describe("DayCare", () => {
       const dayCare = new DayCare();
 
       // TODO: Add a comment describing the purpose of the following statement
+      // checks the dayCare constructor to make sure it has not been changed 
       expect(dayCare).toEqual({ children: [], capacity: 3, ageLimit: 6 });
     });
   });
@@ -14,6 +15,7 @@ describe("DayCare", () => {
   describe("addChild", () => {
     it("should add a child to the 'children' array", () => {
       // TODO: Add a comment describing the purpose of the following declarations
+      // 
       const child = new Child("Tammy", 1);
       const dayCare = new DayCare();
 
