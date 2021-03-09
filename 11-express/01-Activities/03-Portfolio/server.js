@@ -3,12 +3,18 @@ const http = require('http');
 const PORT = 8080;
 
 // When someone visits the "http://localhost:8080/portfolio" path, this function is run.
-const displayPortfolio = (res) => {
+const displayFood = (res) => {
   const myHTML = `
   <html>
     <body>
-      <h1>My Portfolio</h1>
+      <h1>Favorite Foods</h1>
+      <h2>pizza</h2>
+      <h2>sushi</h2>
+      <h2>burgers</h2>
+      <h2>pasta</h2>
       <a href='/'>Go Home</a>
+      <a href='/favorite-movies'>Favorite Movies</a>
+      <a href='/favorite-css'>Favorite CSS Frameworks</a>
     </body>
   </html>`;
 
@@ -25,7 +31,50 @@ const displayRoot = (res) => {
   <html>
     <body>
       <h1>Home Page</h1>
-      <a href='/portfolio'>Portfolio</a>
+      <a href='/favorite-foods'>Favorite Foods</a>
+      <a href='/favorite-movies'>Favorite Movies</a>
+      <a href='/favorite-css'>Favorite CSS Frameworks</a>
+    </body>
+  </html>`;
+
+  // Configure the response to return a status code of 200 (meaning everything went OK), and to be an HTML document
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+
+  // End the response by sending the client the myHTML string (which gets rendered as an HTML document thanks to the code above)
+  res.end(myHTML);
+};
+
+const displayMovie = (res) => {
+  const myHTML = `
+  <html>
+    <body>
+      <h1>Favorite Movies</h1>
+      <h2>I Love You Man</h2>
+      <h2>Batman</h2>
+      <h2>Star Wars</h2>
+      <a href='/'>Home</a>
+      <a href='/favorite-foods'>Favorite Foods</a>
+      <a href='/favorite-css'>Favorite CSS Frameworks</a>
+    </body>
+  </html>`;
+
+  // Configure the response to return a status code of 200 (meaning everything went OK), and to be an HTML document
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+
+  // End the response by sending the client the myHTML string (which gets rendered as an HTML document thanks to the code above)
+  res.end(myHTML);
+};
+
+const displayCSS = (res) => {
+  const myHTML = `
+  <html>
+    <body>
+      <h1>Favorite CSS Frameworks</h1>
+      <h2>Bootstrap</h2>
+      <h2>Bulma</h2>
+      <a href='/'>Home</a>
+      <a href='/favorite-foods'>Favorite Foods</a>
+      <a href='/favorite-movies'>Favorite Movies Frameworks</a>
     </body>
   </html>`;
 
@@ -64,8 +113,14 @@ const handleRequest = (req, res) => {
     case '/':
       return displayRoot(res);
 
-    case '/portfolio':
-      return displayPortfolio(res);
+    case '/favorite-foods':
+      return displayFood(res);
+
+    case '/favorite-movies':
+      return displayMovie(res);
+
+    case '/favorite-css':
+      return displayCSS(res);
 
     default:
       return display404(path, res);
