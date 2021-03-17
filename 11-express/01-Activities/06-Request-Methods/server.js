@@ -13,6 +13,15 @@ const handleRequest = (req, res) => {
     requestData += data;
   });
 
+  fs.readFile(`${__dirname}/index.html`, (err, req) => {
+    const path = req.url;
+    if (err) throw err;
+    // We then respond to the client with the HTML page by specifically telling the browser that we are delivering
+    // an html file.
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(data)
+  });
+  
   // When the request has ended...
   req.on('end', () => {
     // Log (server-side) the request method, as well as the data received!

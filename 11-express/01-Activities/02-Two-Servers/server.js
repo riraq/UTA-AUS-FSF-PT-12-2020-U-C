@@ -8,11 +8,11 @@ const PORT2 = 7500
 // Create a generic function to handle requests and responses
 const handleRequest1 = (request, response) => {
   // Send the below string to the client when the user visits the PORT URL
-  response.end(`It Works!! Path Hit: ${request.url}`);
+  response.end(`Inspirational quote 1`);
 };
 const handleRequest2 = (request, response) => {
   // Send the below string to the client when the user visits the PORT URL
-  response.end(`It Works!! Path Hit: ${request.url}`);
+  response.end(`Inspirational quote 2`);
 };
 
 // Use the Node HTTP package to create our server.
