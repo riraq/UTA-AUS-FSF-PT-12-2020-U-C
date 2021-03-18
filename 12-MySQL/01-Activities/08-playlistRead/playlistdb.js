@@ -2,20 +2,18 @@ const mysql = require('mysql');
 
 const connection = mysql.createConnection({
   host: 'localhost',
-
-  // Your port; if not 3306
   port: 3306,
-
-  // Your username
   user: 'root',
-
-  // Be sure to update with your own MySQL password!
   password: process.env.PASSWORD,
-  database: 'ice_creamDB',
+  database: 'playlistdb',
 });
 
 const afterConnection = () => {
-  connection.query('SELECT * FROM products', (err, res) => {
+  connection.query('SELECT * FROM songs', (err, res) => {
+    if (err) throw err;
+    console.log(res);
+  });
+  connection.query('SELECT * FROM songs WHERE `genre` = "punk"', (err, res) => {
     if (err) throw err;
     console.log(res);
     connection.end();
