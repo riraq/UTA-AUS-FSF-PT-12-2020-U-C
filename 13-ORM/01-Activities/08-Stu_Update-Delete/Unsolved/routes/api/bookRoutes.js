@@ -3,13 +3,42 @@ const Book = require('../../models/Book');
 
 // TODO finish the PUT route to UPDATE a book in the database with a matching book_id
 router.put('/:book_id', (req, res) => {
-  
+  Book.update(
+    {
+      // All the fields you can update and the data attached to the request body.
+      title: req.body.title,
+      author: req.body.author,
+      isbn: req.body.isbn,
+      pages: req.body.pages,
+      edition: req.body.edition,
+      is_paperback: req.body.is_paperback,
+    },
+    {
+      // Gets the books based on the isbn given in the request parameters
+      where: {
+        book_id: req.params.book_id,
+      },
+    }
+  )
+    .then((updatedBook) => {
+      // Sends the updated book as a json response
+      res.json(updatedBook);
+    })
+    .catch((err) => res.json(err));
   
 });
 
 // TODO finish the DELETE route to DELETE a book in the database with a matching book_id
 router.delete('/:book_id', (req, res) => {
-  
+  Book.destroy({
+    where: {
+      book_id: req.params.book_id,
+    },
+  })
+    .then((deletedBook) => {
+      res.json(deletedBook);
+    })
+    .catch((err) => res.json(err));
 });
 
 router.post('/seed', (req, res) => {

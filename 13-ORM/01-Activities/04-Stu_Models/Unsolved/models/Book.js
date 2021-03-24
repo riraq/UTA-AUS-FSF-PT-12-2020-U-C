@@ -4,7 +4,12 @@ const sequelize = require('../config/connection');
 class Book extends Model {}
 
 Book.init(
-  {
+  
+  {bookId: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true // Automatically gets converted to SERIAL for postgres
+  },
     title: {
       type: DataTypes.STRING
     },
@@ -28,7 +33,8 @@ Book.init(
     sequelize,
     timestamps: false,
     underscored: true,
-    modelName: 'book'
+    modelName: 'book',
+    freezeTableName: true
   }
 );
 
