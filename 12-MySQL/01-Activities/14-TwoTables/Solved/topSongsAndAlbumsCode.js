@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
   user: 'root',
 
   // Be sure to update with your own MySQL password!
-  password: '',
+  password: 'mySQLpass',
   database: 'top_songsDB',
 });
 
@@ -172,7 +172,7 @@ const songAndAlbumSearch = () => {
         'FROM top_albums INNER JOIN top5000 ON (top_albums.artist = top5000.artist AND top_albums.year ';
       query +=
         '= top5000.year) WHERE (top_albums.artist = ? AND top5000.artist = ?) ORDER BY top_albums.year, top_albums.position';
-
+      console.log(query)
       connection.query(query, [answer.artist, answer.artist], (err, res) => {
         console.log(`${res.length} matches found!`);
         res.forEach(({ year, position, artist, song, album }, i) => {
