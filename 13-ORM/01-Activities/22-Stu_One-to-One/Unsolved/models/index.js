@@ -4,6 +4,7 @@ const LibraryCard = require('./LibraryCard');
 Reader.hasOne(LibraryCard, {
   foreignKey: 'reader_id',
   // TODO: Add a comment describing the functionality of this property
+  // 
   onDelete: 'CASCADE',
 });
 
