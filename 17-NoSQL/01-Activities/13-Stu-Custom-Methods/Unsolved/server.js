@@ -22,13 +22,15 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/custommethoddb"
 // Routes
 
 // Route to post our form submission to mongoDB via mongoose
-app.post("/submit", ({body}, res) => {
+app.post("/submit", ({ body }, res) => {
   // Create a new user using req.body
-
+  const user = new User(body);
   // Update this route to run the `setFullName` and `lastUpdatedDate` methods before creating a new User
   // You must create these methods in the model.
+  user.setFullName();
+  user.lastUpdatedDate();
 
-  User.create(body)
+  User.create(user)
     .then(dbUser => {
       // If saved successfully, send the the new User document to the client
       res.json(dbUser);
