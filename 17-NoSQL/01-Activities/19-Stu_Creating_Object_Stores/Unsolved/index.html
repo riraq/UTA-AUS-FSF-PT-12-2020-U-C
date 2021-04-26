@@ -9,7 +9,20 @@
   <body>
     <h1>Open Your Developer Tools > Application > IndexedDB</h1>
     <script>
-    // CODE HERE
+      // CODE HERE
+      // We request a database instance
+      const request = indexedDB.open("theDatabase2", 1);
+
+      // Create an object store inside the onupgradeneeded method.
+      request.onupgradeneeded = ({ target }) => {
+        const db = target.result;
+        const objectStore = db.createObjectStore("toDoList2");
+      };
+
+      // On success console the result.
+      request.onsuccess = event => {
+        console.log(request.result);
+      };
     </script>
   </body>
 </html>
