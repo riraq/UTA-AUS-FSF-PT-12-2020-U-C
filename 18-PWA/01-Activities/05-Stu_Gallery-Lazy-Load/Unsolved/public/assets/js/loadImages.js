@@ -10,6 +10,20 @@ function createEl(htmlString = "", className) {
 
 function initLazyImages() {
   // Enter your lazy loading code here
+  var imagesToLoad = document.querySelectorAll(".card-img-top")
+  
+  const observer = new IntersectionObserver((items, observer) => {
+    items.forEach((item) => {
+      if(item.isIntersecting) {
+        observer.unobserve(item.target);
+        item.target.src = item.target.dataset.src
+      }
+    });
+  });
+  
+  imagesToLoad.forEach((img) => {
+    observer.observe(img);
+  });
 }
 
 function loadImages() {

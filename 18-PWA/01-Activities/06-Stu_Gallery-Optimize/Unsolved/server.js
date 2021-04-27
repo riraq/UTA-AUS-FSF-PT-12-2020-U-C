@@ -2,13 +2,14 @@ var express = require("express");
 var mongoose = require("mongoose");
 
 // create a reference to compression package (make sure the package is installed)
-
+var compression = require("compression");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
 
 // enable compression middleware
 
+app.use(compression())
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
