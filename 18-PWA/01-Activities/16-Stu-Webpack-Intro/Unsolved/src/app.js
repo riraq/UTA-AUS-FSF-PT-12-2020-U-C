@@ -10,9 +10,14 @@ function addToList(name, price) {
     <span class="ml-4">Price: ${price}</span></li>`;
 }
 
+function calculateBudget(price, balance) {
+  return balance - price;
+}
+
 function submit(e) {
   e.preventDefault();
   addToList(expenseEl.value, priceEl.value);
+  balance.innerHTML = calculateBudget(priceEl.value, balance.innerHTML)
 }
 
 function reset(e) {

@@ -1,4 +1,5 @@
 // @TODO Add remove from favorites functionality
+import { createElement } from "./domMethods";
 
 function checkForIndexedDb() {
   window.indexedDB =
@@ -184,40 +185,40 @@ function createArticle({
 }
 
 // Helper function for creating elements
-function createElement(type, attributes, ...children) {
-  const element = document.createElement(type);
+// function createElement(type, attributes, ...children) {
+//   const element = document.createElement(type);
 
-  if (typeof attributes === "object") {
-    for (const key in attributes) {
-      if (key.startsWith("on")) {
-        const event = key.substring(2).toLowerCase();
-        const handler = attributes[key];
+//   if (typeof attributes === "object") {
+//     for (const key in attributes) {
+//       if (key.startsWith("on")) {
+//         const event = key.substring(2).toLowerCase();
+//         const handler = attributes[key];
 
-        element.addEventListener(event, handler);
-      } else {
-        element.setAttribute(key, attributes[key]);
-      }
-    }
-  }
+//         element.addEventListener(event, handler);
+//       } else {
+//         element.setAttribute(key, attributes[key]);
+//       }
+//     }
+//   }
 
-  children.forEach(child => {
-    if (typeof child === "boolean" || child === null || child === undefined) {
-      return;
-    }
+//   children.forEach(child => {
+//     if (typeof child === "boolean" || child === null || child === undefined) {
+//       return;
+//     }
 
-    let node;
+//     let node;
 
-    if (child instanceof HTMLElement) {
-      node = child;
-    } else {
-      node = document.createTextNode(child);
-    }
+//     if (child instanceof HTMLElement) {
+//       node = child;
+//     } else {
+//       node = document.createTextNode(child);
+//     }
 
-    element.appendChild(node);
-  });
+//     element.appendChild(node);
+//   });
 
-  return element;
-}
+//   return element;
+// }
 
 // Formats and returns date in MMMM/DD/YYYY format
 function formatDate(dateStr) {
