@@ -36,7 +36,7 @@ const Signup = () => {
         </Container>
         <Container className="mt-4">
           <h3>Hello NAME_HERE!</h3>
-          <p>I probably shouldn't tell you this, but your password is PASSWORD_HERE}!</p>
+          <p>I probably shouldn't tell you this, but your password is PASSWORD_HERE!</p>
         </Container>
       </form>
     </div>

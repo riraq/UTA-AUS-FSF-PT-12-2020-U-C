@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Jumbotron from "../components/Jumbotron";
 import DeleteBtn from "../components/DeleteBtn";
 import API from "../utils/API";
@@ -7,6 +7,10 @@ import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
 function Books() {
+  const titleRef = useRef();
+  const synopsisRef = useRef();
+  const authorRef = useRef();
+  
   // Setting our component's initial state
   const [books, setBooks] = useState([])
 
@@ -28,12 +32,27 @@ function Books() {
       .catch(err => console.log(err));
   };
 
-  function handleInputChange() {
+  function handleInputChange(event) {
     // add code to control the components here
+    const value = event.target.value;
+    const name = event.target.name;
+    setFormObject({
+      [name]: value
+    });
   }
 
-  function handleFormSubmit() {
+  function handleFormSubmit(event) {
     // add code here to post a new book to the api
+    event.preventDefault();
+    API.saveBook({
+      title: formObject.title,
+      author: formObject.author,
+      synopsis: formObject.synopsis
+    })
+    .then(res => {
+      setBooks(res.data)
+    })
+    .catch((err) => console.log(err));
   }
 
   function deleteBook() {
@@ -53,16 +72,19 @@ function Books() {
                 onChange={handleInputChange}
                 name="title"
                 placeholder="Title (required)"
+                ref={formObject.title}
               />
               <Input
                 onChange={handleInputChange}
                 name="author"
                 placeholder="Author (required)"
+                ref={formObject.author}
               />
               <TextArea
                 onChange={handleInputChange}
                 name="synopsis"
                 placeholder="Synopsis (Optional)"
+                ref={formObject.synopsis}
               />
               <FormBtn
                 disabled={!(formObject.author && formObject.title)}

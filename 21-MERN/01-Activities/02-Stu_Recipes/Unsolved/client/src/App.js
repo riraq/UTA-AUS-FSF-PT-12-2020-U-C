@@ -65,6 +65,16 @@ function App() {
         <Row>
           <Col size="xs-12">
             <h1>Render Recipes Here</h1>
+            <RecipeList>
+              {recipes.map(recipe =>
+                
+                <RecipeListItem 
+                  title={recipe.title}
+                  id={recipe.id}
+                />
+
+                )}
+            </RecipeList>
           </Col>
         </Row>
       </Container>
